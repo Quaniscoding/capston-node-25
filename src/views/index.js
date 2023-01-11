@@ -6,6 +6,4 @@ app.use(express.static("."));
 app.use(cors());
 app.listen(8080);
 const rootRoute = require('../routes');
-
-
 app.use("/api", rootRoute)
