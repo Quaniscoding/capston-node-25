@@ -10,7 +10,6 @@ const getDatPhong = async (req, res) => {
         else {
             sucessCode(res, data, "Lấy thông tin phòng thành công !");
         }
-
     } catch (error) {
         errorCode(res, "Lỗi Backend")
     }

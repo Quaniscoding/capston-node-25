@@ -23,7 +23,7 @@ const verifyToken = (req, res, next) => {
     if (verifyToken.checkData) {
         next();
     } else {
-        res.status(401).send(verifyToken.message);
+        res.status(401).send("Token đã hết hạn !");
     }
 }
 module.exports = {
