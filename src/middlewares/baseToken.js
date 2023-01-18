@@ -3,6 +3,7 @@ const parseToken = (data) => {
     let token = jwt.sign({ data }, "bimat", { algorithm: "HS256", expiresIn: "2d" }); //hs256
     return token;
 }
+const date = new Date();
 
 const checkToken = (token) => {
     try {
@@ -23,7 +24,11 @@ const verifyToken = (req, res, next) => {
     if (verifyToken.checkData) {
         next();
     } else {
-        res.status(401).send("Token đã hết hạn !");
+        res.status(401).send({
+            "status": 401,
+            "Content": "Token đã hết hạn",
+            "DateTime": date
+        });
     }
 }
 module.exports = {

@@ -1,8 +1,7 @@
 const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
 const { sucessCode, errorCode, failCode } = require('../../config/reponse');
-const fs = require('fs');
-const postAvatar = async (req, res) => {
+const postHinhViTri = async (req, res) => {
     try {
         const fs = require('fs');
         if (req.file.size >= 4000000) {
@@ -13,6 +12,7 @@ const postAvatar = async (req, res) => {
         if (req.file.mimetype != "image/jpeg" && req.file.mimetype != "image/jpg") {
             fs.unlinkSync(process.cwd() + "/public/img/" + req.file.filename);
             failCode(res, "", "Hình ảnh sai định dạng !")
+            return;
         }
         fs.readFile(process.cwd() + "/public/img/" + req.file.filename, (err, data) => {
             let dataBase = `data:${req.file.mimetype};base64,${Buffer.from(data).toString("base64")}`;
@@ -20,16 +20,16 @@ const postAvatar = async (req, res) => {
                 fs.unlinkSync(process.cwd() + "/public/img/" + req.file.filename);
             }, 5000);
             let id = req.params.id
-            let { avatar } = req.body;
-            avatar = dataBase
+            let { hinh_anh } = req.body;
+            hinh_anh = dataBase
             const uploadImage = async () => {
-                const dataUpload = await prisma.nguoiDung.update({
-                    data: { avatar }
+                const dataUpload = await prisma.viTri.update({
+                    data: { hinh_anh }
                     , where: {
                         id: Number(id)
                     }
-                })
-                sucessCode(res, dataUpload, "Upload avatar thành công !");
+                });
+                sucessCode(res, dataUpload, "Upload hình vị trí thành công !");
             }
             uploadImage()
         })
@@ -38,5 +38,5 @@ const postAvatar = async (req, res) => {
     }
 }
 module.exports = {
-    postAvatar
+    postHinhViTri
 }

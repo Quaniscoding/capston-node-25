@@ -68,7 +68,7 @@ model Phong {
   do_xe     Boolean?
   ho_boi    Boolean?
   ban_ui    Boolean?
-  hinh_anh  String?    @db.VarChar(255)
+  hinh_anh  String?    @db.MediumText
   ma_vi_tri Int?
   BinhLuan  BinhLuan[]
   DatPhong  DatPhong[]
@@ -84,6 +84,6 @@ model ViTri {
   ten_vi_tri String? @db.VarChar(255)
   tinh_thanh String? @db.VarChar(255)
   quoc_gia   String? @db.VarChar(255)
-  hinh_anh   String? @db.VarChar(255)
+  hinh_anh   String? @db.MediumText
   Phong      Phong[]
 }

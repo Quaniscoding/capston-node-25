@@ -24,6 +24,17 @@ const getPhongThue = require('./Phong/getPhongThue')
 const getPhongThueTheoViTri = require('./Phong/getPhongThueTheoViTri')
 const getPhongPhanTrang = require('./Phong/getPhongPhanTrang')
 const postPhongThue = require('./Phong/postPhongThue')
+const getPhongThueTheoId = require('./Phong/getPhongThueTheoId')
+const updatePhongThue = require('./Phong/updatePhongThue')
+const deletePhongThue = require('./Phong/deletePhongThue')
+const postHinhPhong = require('./Phong/postHinhPhong')
+const getViTri = require('./ViTri/getViTri')
+const postViTri = require('./ViTri/postViTri')
+const getViTriTheoId = require('./ViTri/getViTriTheoId')
+const getViTriPhanTrang = require('./ViTri/getViTriPhanTrang')
+const updateViTri = require('./ViTri/updateViTri')
+const deleteViTri = require('./ViTri/deleteViTri')
+const postHinhViTri = require('./ViTri/postHinhViTri')
 const rootRoute = express.Router();
 //auth
 rootRoute.use("/auth", signUp);
@@ -55,4 +66,18 @@ rootRoute.use("", getPhongThue)
 rootRoute.use("", postPhongThue)
 rootRoute.use("", getPhongThueTheoViTri)
 rootRoute.use("", getPhongPhanTrang)
+rootRoute.use("", getPhongThueTheoId)
+rootRoute.use("", updatePhongThue)
+rootRoute.use("", deletePhongThue)
+rootRoute.use("", postHinhPhong)
+
+//ViTri
+rootRoute.use("", getViTri)
+rootRoute.use("", postViTri)
+rootRoute.use("", getViTriPhanTrang)
+rootRoute.use("", getViTriTheoId)
+rootRoute.use("", updateViTri)
+rootRoute.use("", deleteViTri)
+rootRoute.use("", postHinhViTri)
+
 module.exports = rootRoute;

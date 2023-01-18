@@ -1,10 +1,10 @@
 const express = require('express');
-const { postAvatar } = require('../../controllers/NguoiDung/postAvatar');
+const { postHinhViTri } = require('../../controllers/ViTri/postHinhViTri');
 const { verifyToken } = require('../../middlewares/baseToken');
 const { upload } = require('../../middlewares/upload');
 
 const userRoute = express.Router();
-//http://localhost:8080/api/upload-avatar/{id}
+//http://localhost:8080/api/upload-hinh-vi-tri/{id}
 //put
-userRoute.put("/upload-avatar/:id", upload.single("dataUpload"), verifyToken, postAvatar)
+userRoute.put("/upload-hinh-vi-tri/:id", upload.single("dataUpload"), verifyToken, postHinhViTri)
 module.exports = userRoute;

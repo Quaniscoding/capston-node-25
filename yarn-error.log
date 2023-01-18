@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\vq250\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add convert-based64-to-image
+  C:\Program Files\nodejs\node.exe C:\Users\vq250\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add --dev prisma@latest │
 
 PATH: 
   C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files\dotnet\;C:\Program Files\Docker\Docker\resources\bin;C:\Users\vq250\AppData\Local\Microsoft\WindowsApps;;C:\Users\vq250\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\vq250\AppData\Roaming\npm
@@ -14,17 +14,15 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/convert-based64-to-image: Not found
-      at params.callback [as _callback] (C:\Users\vq250\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:66145:18)
-      at self.callback (C:\Users\vq250\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:140890:22)
-      at Request.emit (node:events:513:28)
-      at Request.<anonymous> (C:\Users\vq250\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141862:10)
-      at Request.emit (node:events:513:28)
-      at IncomingMessage.<anonymous> (C:\Users\vq250\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141784:12)
-      at Object.onceWrapper (node:events:627:28)
-      at IncomingMessage.emit (node:events:525:35)
-      at endReadableNT (node:internal/streams/readable:1359:12)
-      at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+  TypeError [ERR_UNESCAPED_CHARACTERS]: https://registry.yarnpkg.com/│: Request path contains unescaped characters
+      at new NodeError (node:internal/errors:393:5)
+      at new ClientRequest (node:_http_client:182:13)
+      at Object.request (node:https:360:10)
+      at module.exports.Request.start (C:\Users\vq250\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141452:32)
+      at module.exports.Request.end (C:\Users\vq250\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:142211:10)
+      at end (C:\Users\vq250\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141265:14)
+      at Immediate.<anonymous> (C:\Users\vq250\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141279:7)
+      at process.processImmediate (node:internal/timers:471:21)
 
 npm manifest: 
   {
@@ -37,8 +35,8 @@ npm manifest:
     },
     "dependencies": {
       "@prisma/client": "^4.8.0",
-      "base64-img": "^1.0.4",
       "bcrypt": "^5.1.0",
+      "convert-base64-to-image": "^0.0.16",
       "cors": "^2.8.5",
       "dotenv": "^16.0.3",
       "express": "^4.18.2",
@@ -298,6 +296,11 @@ Lockfile:
     version "1.0.4"
     resolved "https://registry.yarnpkg.com/content-type/-/content-type-1.0.4.tgz#e138cc75e040c727b1966fe5e5f8c9aee256fe3b"
     integrity sha512-hIP3EEPs8tB9AT1L+NUqtwOAps4mk2Zob89MWXMHjHWg9milF/j4osnnQLXBCBFBk/tvIG/tUc9mOUJiPBhPXA==
+  
+  convert-base64-to-image@^0.0.16:
+    version "0.0.16"
+    resolved "https://registry.yarnpkg.com/convert-base64-to-image/-/convert-base64-to-image-0.0.16.tgz#7a7e00e66063962485a0f80bb38960a192095af4"
+    integrity sha512-k9Z/nh6rUqx50hace2hv4ohS9/qR4Y7Pocatw35OZUUlxHE5Nl+rCPWOQq+OjU8eAsoXYoTfotfL8da74AuzWQ==
   
   cookie-signature@1.0.6:
     version "1.0.6"
