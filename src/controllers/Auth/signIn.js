@@ -34,7 +34,6 @@ const signIn = async (req, res) => {
         errorCode(res, "Lỗi Backend");
     }
 }
-
 module.exports = {
     signIn
 }
