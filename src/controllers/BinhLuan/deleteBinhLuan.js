@@ -4,17 +4,28 @@ const { sucessCode, failCode, errorCode } = require('../../config/reponse');
 const deleteBinhLuan = async (req, res) => {
     let id = req.params.id;
     try {
-        const data = await prisma.binhLuan.delete({
+        let checkBinhLuan = await prisma.binhLuan.findFirst({
             where: {
                 id: Number(id)
             }
-        });
-        if (data == "") {
+        })
+        if (!checkBinhLuan) {
             failCode(res, "", "Xóa bình luận thất bại")
         }
         else {
-            sucessCode(res, data, "Xóa bình luận thành công !");
+            const data = await prisma.binhLuan.delete({
+                where: {
+                    id: Number(id)
+                }
+            });
+            if (data == "") {
+                failCode(res, "", "Xóa bình luận thất bại")
+            }
+            else {
+                sucessCode(res, data, "Xóa bình luận thành công !");
+            }
         }
+
     } catch (error) {
         errorCode(res, "Lỗi Backend")
     }

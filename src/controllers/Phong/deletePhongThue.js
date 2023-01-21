@@ -4,16 +4,28 @@ const { sucessCode, failCode, errorCode } = require("../../config/reponse");
 const deletePhongThue = async (req, res) => {
     let id = req.params.id;
     try {
-        const data = await prisma.phong.delete({
+        let checkPhongThue = await prisma.phong.findFirst({
             where: {
-                id: Number(id),
-            },
-        });
-        if (data == "") {
+                id: Number(id)
+            }
+        })
+        if (!checkPhongThue) {
             failCode(res, "", "Xóa phòng thuê thất bại !");
-        } else {
-            sucessCode(res, data, "Xóa phòng thuê thành công !");
+
         }
+        else {
+            const data = await prisma.phong.delete({
+                where: {
+                    id: Number(id),
+                },
+            });
+            if (data == "") {
+                failCode(res, "", "Xóa phòng thuê thất bại !");
+            } else {
+                sucessCode(res, data, "Xóa phòng thuê thành công !");
+            }
+        }
+
     } catch (error) {
         errorCode(res, "Lỗi Backend");
     }

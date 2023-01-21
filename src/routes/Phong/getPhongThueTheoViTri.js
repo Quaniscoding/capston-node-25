@@ -4,7 +4,7 @@ const { getPhongThueTheoViTri } = require('../../controllers/Phong/getPhongTheoV
 const { verifyToken } = require('../../middlewares/baseToken');
 const userRoute = express.Router();
 
-//http://localhost:8080/api/phong-thue/lay-phong-theo-vi-tri/{id}
+//http://localhost:8080/api/get-phong-thue/lay-phong-theo-vi-tri/{id}
 //get
-userRoute.get("/phong-thue/lay-phong-theo-vi-tri/:id", verifyToken, getPhongThueTheoViTri)
+userRoute.get("/get-phong-thue/lay-phong-theo-vi-tri/:id", verifyToken, getPhongThueTheoViTri)
 module.exports = userRoute;

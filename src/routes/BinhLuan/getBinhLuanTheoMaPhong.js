@@ -5,5 +5,5 @@ const userRoute = express.Router();
 
 //http://localhost:8080/api/binh-luan/{MaPhong}
 //get
-userRoute.get("/binh-luan/:maPhong", verifyToken, getBinhLuanTheoMaPhong)
+userRoute.get("/get-binh-luan-theo-ma-phong/:maPhong", verifyToken, getBinhLuanTheoMaPhong)
 module.exports = userRoute;

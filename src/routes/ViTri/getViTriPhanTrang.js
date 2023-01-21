@@ -4,7 +4,7 @@ const { getViTriPhanTrang } = require('../../controllers/ViTri/getViTriPhanTrang
 const { verifyToken } = require('../../middlewares/baseToken');
 const userRoute = express.Router();
 
-//http://localhost:8080/api/vi-tri/phan-trang-tim-kiem?{pageIndex}?{pageSize}?{keyWord}
+//http://localhost:8080/get-vi-tri/phan-trang/:pageIndex/:pageSize?{keyword}
 //get
-userRoute.get("/vi-tri/phan-trang-tim-kiem", verifyToken, getViTriPhanTrang)
+userRoute.get("/get-vi-tri/phan-trang/:pageIndex/:pageSize", verifyToken, getViTriPhanTrang)
 module.exports = userRoute;

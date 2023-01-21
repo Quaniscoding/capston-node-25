@@ -4,7 +4,6 @@ const { sucessCode, errorCode, failCode } = require('../../config/reponse');
 const fs = require('fs');
 const postAvatar = async (req, res) => {
     try {
-        const fs = require('fs');
         if (req.file.size >= 4000000) {
             fs.unlinkSync(process.cwd() + "/public/img/" + req.file.filename);
             failCode(res, "", "Chỉ được phép upload ảnh dưới 4Mb !")

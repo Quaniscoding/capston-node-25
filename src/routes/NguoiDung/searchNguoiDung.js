@@ -6,5 +6,5 @@ const userRoute = express.Router();
 
 //http://localhost:8080/api/nguoi-dung/{tenNguoiDung}
 //get
-userRoute.get("/nguoi-dung/:tenNguoiDung", verifyToken, searchNguoiDung)
+userRoute.get("/get-nguoi-dung/search/:tenNguoiDung", verifyToken, searchNguoiDung)
 module.exports = userRoute;

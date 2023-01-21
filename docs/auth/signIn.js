@@ -12,15 +12,18 @@ module.exports = {
             "produces": [
                 "application/json",
             ],
-            "parameters": [{
-                type: "object",
-                name: "model",
-                in: "body",
-                schema: {
-                    $ref: "#/components/schemas/DangNhapView",
+            "requestBody": {
+                "description": "Sign in",
+                "require": "true",
+                "content": {
+                    " application/json": {
+                        schema: {
+                            $ref: "#/components/schemas/DangNhapView",
+                        },
+
+                    }
                 },
-            }
-            ],
+            },
             "responses": {
                 "200": {
                     "description": "Success"

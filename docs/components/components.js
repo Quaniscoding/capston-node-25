@@ -49,21 +49,21 @@ module.exports = {
                         "type": "integer",
                         "format": "int32"
                     },
-                    "maPhong": {
+                    "ma_phong": {
                         "type": "integer",
                         "format": "int32"
                     },
-                    "maNguoiBinhLuan": {
+                    "ma_nguoi_binh_luan": {
                         "type": "integer",
                         "format": "int32"
                     },
-                    "ngayBinhLuan": {
+                    "ngay_binh_luan": {
                         "type": "string",
                     },
-                    "noiDung": {
+                    "noi_dung": {
                         "type": "string",
                     },
-                    "saoBinhLuan": {
+                    "sao_binh_luan": {
                         "type": "integer",
                         "format": "int32"
                     },
@@ -75,29 +75,29 @@ module.exports = {
                         "type": "integer",
                         "format": "int32"
                     },
-                    "maPhong": {
+                    "ma_phong": {
                         "type": "integer",
                         "format": "int32"
                     },
-                    "ngayDen": {
+                    "ngay_den": {
                         "type": "string",
                         "format": "dateTime"
                     },
-                    "ngayDi": {
+                    "ngay_di": {
                         "type": "string",
                         "format": "dateTime"
                     },
-                    "soLuongKhach": {
+                    "so_luong_khach": {
                         "type": "integer",
                         "format": "int32"
                     },
-                    "maNguoiDung": {
+                    "ma_nguoi_dat": {
                         "type": "integer",
                         "format": "int32"
                     }
                 }
             },
-            "CapNhatNguoiDung": {
+            "NguoiDungViewModel": {
                 "properties": {
                     "id": {
                         "type": "integer",
@@ -109,7 +109,7 @@ module.exports = {
                     "email": {
                         "type": "string",
                     },
-                    "password": {
+                    "pass_word": {
                         "type": "string",
                     },
                     "phone": {
@@ -130,8 +130,26 @@ module.exports = {
             "CapNhatNguoiDung": {
                 "properties": {
                     "id": {
-                        "type": "integer",
-                        "format": "int32"
+                        "format": "int32",
+                        "type": "integer"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "email": {
+                        "type": "string"
+                    },
+                    "phone": {
+                        "type": "string"
+                    },
+                    "birthday": {
+                        "type": "string"
+                    },
+                    "gender": {
+                        "type": "boolean"
+                    },
+                    "role": {
+                        "type": "string"
                     }
                 }
             },
@@ -141,14 +159,14 @@ module.exports = {
                         "type": "integer",
                         "format": "int32"
                     },
-                    "tenPhong": {
+                    "ten_phong": {
                         "type": "string",
                     },
                     "khach": {
                         "type": "integer",
                         "format": "int32"
                     },
-                    "phongNgu": {
+                    "phong_ngu": {
                         "type": "integer",
                         "format": "int32"
                     },
@@ -156,27 +174,27 @@ module.exports = {
                         "type": "integer",
                         "format": "int32"
                     },
-                    "phongTam": {
+                    "phong_tam": {
                         "type": "integer",
                         "format": "int32"
                     },
-                    "moTa": {
+                    "mo_ta": {
                         "type": "string",
                     },
-                    "giaTien": {
+                    "gia_tien": {
                         "type": "integer",
                         "format": "int32"
                     },
-                    "mayGiat": {
+                    "may_giat": {
                         "type": "boolean",
                     },
-                    "banLa": {
+                    "ban_la": {
                         "type": "boolean",
                     },
-                    "tivi": {
+                    "ti_vi": {
                         "type": "boolean",
                     },
-                    "dieuHoa": {
+                    "dieu_hoa": {
                         "type": "boolean",
                     },
                     "wifi": {
@@ -185,22 +203,22 @@ module.exports = {
                     "bep": {
                         "type": "boolean",
                     },
-                    "doXe": {
+                    "do_xe": {
                         "type": "boolean",
 
                     },
-                    "hoBoi": {
+                    "ho_boi": {
                         "type": "boolean",
                     },
-                    "banUi": {
+                    "ban_ui": {
                         "type": "boolean",
                     },
-                    "maViTri": {
-                        "type": "string",
-                    },
-                    "hinhAnh": {
+                    "ma_vi_tri": {
                         "type": "integer",
                         "format": "int32"
+                    },
+                    "hinh_anh": {
+                        "type": "string",
                     }
                 }
             },
@@ -210,80 +228,20 @@ module.exports = {
                         "type": "integer",
                         "format": "int32"
                     },
-                    "tenViTri": {
+                    "ten_vi_tri": {
                         "type": "string"
                     },
-                    "tinhThanh": {
+                    "tinh_thanh": {
                         "type": "string"
                     },
-                    "quocGia": {
+                    "quoc_gia": {
                         "type": "string"
                     },
-                    "hinhAnh": {
+                    "hinh_anh": {
                         "type": "string"
                     }
                 }
             },
         },
-
-        "parameters": {
-            "skipParam": {
-                "name": "skip",
-                "in": "query",
-                "description": "number of items to skip",
-                "required": true,
-                "schema": {
-                    "type": "integer",
-                    "format": "int32"
-                }
-            },
-            "limitParam": {
-                "name": "limit",
-                "in": "query",
-                "description": "max records to return",
-                "required": true,
-                "schema": {
-                    "type": "integer",
-                    "format": "int32"
-                }
-            }
-        },
-        "responses": {
-            "NotFound": {
-                "description": "Entity not found."
-            },
-            "IllegalInput": {
-                "description": "Illegal input for operation."
-            },
-            "GeneralError": {
-                "description": "General Error",
-                "content": {
-                    "application/json": {
-                        "schema": {
-                            "$ref": "#/components/schemas/GeneralError"
-                        }
-                    }
-                }
-            }
-        },
-        "securitySchemes": {
-            "api_key": {
-                "type": "apiKey",
-                "name": "api_key",
-                "in": "header"
-            },
-            "petstore_auth": {
-                "type": "oauth2",
-                "flows": {
-                    "implicit": {
-                        "authorizationUrl": "http://example.org/api/oauth/dialog",
-                        "scopes": {
-                            "write:pets": "modify pets in your account",
-                            "read:pets": "read your pets"
-                        }
-                    }
-                }
-            }
-        }
     }
 };

@@ -2,7 +2,9 @@ const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
 const { sucessCode, failCode, errorCode, errorCodeNew } = require('../../config/reponse');
 const getNguoiDungPhanTrang = async (req, res) => {
-    let { pageIndex, pageSize, keyWord } = req.query;
+    let pageIndex = req.params.pageIndex;
+    let pageSize = req.params.pageSize;
+    let keyWord = req.query.keyword;
     try {
         if (!pageIndex && pageSize) {
             const dataNguoiDung = await prisma.nguoiDung.findMany();

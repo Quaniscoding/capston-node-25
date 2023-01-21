@@ -4,7 +4,7 @@ const { deletePhongThue } = require('../../controllers/phong/deletePhongThue');
 const { verifyToken } = require('../../middlewares/baseToken');
 const userRoute = express.Router();
 
-//http://localhost:8080/api/phong-thue/{id}
+//http://localhost:8080/api/delete-phong-thue/{id}
 //delete
-userRoute.delete("/phong-thue/:id", verifyToken, deletePhongThue)
+userRoute.delete("/delete-phong-thue/:id", verifyToken, deletePhongThue)
 module.exports = userRoute;

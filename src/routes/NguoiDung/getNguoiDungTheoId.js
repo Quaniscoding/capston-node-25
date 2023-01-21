@@ -4,7 +4,7 @@ const { getNguoiDungTheoId } = require('../../controllers/NguoiDung/getNguoiDung
 const { verifyToken } = require('../../middlewares/baseToken');
 const userRoute = express.Router();
 
-//http://localhost:8080/api/nguoi-dung/{id}
+//http://localhost:8080/api/get-nguoi-dung-id/{id}
 //get
-userRoute.get("/nguoi-dung/:id", verifyToken, getNguoiDungTheoId)
+userRoute.get("/get-nguoi-dung-id/:id", verifyToken, getNguoiDungTheoId)
 module.exports = userRoute;

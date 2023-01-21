@@ -1,5 +1,5 @@
 module.exports = {
-    "/api/binh-luan": {
+    "/api/get-binh-luan": {
         get: {
             tags: ["Bình Luận"],
             "operationId": "getBinhLuan",

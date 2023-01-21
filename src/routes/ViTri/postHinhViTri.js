@@ -4,7 +4,7 @@ const { verifyToken } = require('../../middlewares/baseToken');
 const { upload } = require('../../middlewares/upload');
 
 const userRoute = express.Router();
-//http://localhost:8080/api/upload-hinh-vi-tri/{id}
+//http://localhost:8080/api/post-hinh-vi-tri/{id}
 //put
-userRoute.put("/upload-hinh-vi-tri/:id", upload.single("dataUpload"), verifyToken, postHinhViTri)
+userRoute.put("/post-hinh-vi-tri/:id", upload.single("dataUpload"), verifyToken, postHinhViTri)
 module.exports = userRoute;

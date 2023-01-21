@@ -4,7 +4,7 @@ const { getViTriTheoId } = require('../../controllers/ViTri/getViTriTheoId');
 const { verifyToken } = require('../../middlewares/baseToken');
 const userRoute = express.Router();
 
-//http://localhost:8080/api/vi-tri/{id}
+//http://localhost:8080/api/get-vi-tri-id/{id}
 //get
-userRoute.get("/vi-tri/:id", verifyToken, getViTriTheoId)
+userRoute.get("/get-vi-tri-id/:id", verifyToken, getViTriTheoId)
 module.exports = userRoute;

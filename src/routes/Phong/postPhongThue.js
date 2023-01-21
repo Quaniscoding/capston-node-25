@@ -6,5 +6,5 @@ const userRoute = express.Router();
 
 //http://localhost:8080/api/phong-thue
 //post
-userRoute.post("/phong-thue", verifyToken, postPhongThue)
+userRoute.post("/post-phong-thue", verifyToken, postPhongThue)
 module.exports = userRoute;

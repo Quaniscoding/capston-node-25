@@ -4,7 +4,7 @@ const { getDatPhong } = require('../../controllers/DatPhong/getDatPhong');
 const { verifyToken } = require('../../middlewares/baseToken');
 const userRoute = express.Router();
 
-//http://localhost:8080/api/dat-phong
+//http://localhost:8080/api/get-dat-phong
 //get
-userRoute.get("/dat-phong", verifyToken, getDatPhong)
+userRoute.get("/get-dat-phong", verifyToken, getDatPhong)
 module.exports = userRoute;

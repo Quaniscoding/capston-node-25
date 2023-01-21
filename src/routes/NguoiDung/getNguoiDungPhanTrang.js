@@ -4,7 +4,7 @@ const { getNguoiDungPhanTrang } = require('../../controllers/NguoiDung/getNguoiD
 const { verifyToken } = require('../../middlewares/baseToken');
 const userRoute = express.Router();
 
-//http://localhost:8080/api/nguoi-dung/phan-trang-tim-kiem?{pageIndex}/{pageSize}/{keyWord}
+//http://localhost:8080/api/get-nguoi-dung/phan-trang?{pageIndex}/{pageSize}/{keyWord}
 //get
-userRoute.get("/nguoi-dung/phan-trang-tim-kiem", verifyToken, getNguoiDungPhanTrang)
+userRoute.get("/get-nguoi-dung/phan-trang/:pageIndex/:pageSize", verifyToken, getNguoiDungPhanTrang)
 module.exports = userRoute;

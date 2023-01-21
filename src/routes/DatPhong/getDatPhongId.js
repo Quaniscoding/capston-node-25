@@ -4,7 +4,7 @@ const { getDatPhongTheoId } = require('../../controllers/DatPhong/getDatPhongThe
 const { verifyToken } = require('../../middlewares/baseToken');
 const userRoute = express.Router();
 
-//http://localhost:8080/api/dat-phong/{id}
+//http://localhost:8080/api/get-dat-phong-id/{id}
 //get
-userRoute.get("/dat-phong/:id", verifyToken, getDatPhongTheoId)
+userRoute.get("/get-dat-phong-id/:id", verifyToken, getDatPhongTheoId)
 module.exports = userRoute;

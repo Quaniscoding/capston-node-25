@@ -5,19 +5,30 @@ const updateViTri = async (req, res) => {
     let id = req.params.id;
     let { ten_vi_tri, tinh_thanh, quoc_gia, hinh_anh } = req.body
     try {
-        const data = await prisma.viTri.update({
-            data: {
-                ten_vi_tri, tinh_thanh, quoc_gia, hinh_anh
-            },
+        let checkViTri = await prisma.viTri.findFirst({
             where: {
-                id: Number(id),
-            },
-        });
-        if (data == "") {
-            failCode(res, "", "Cập nhật vị trí thất bại !");
-        } else {
-            sucessCode(res, data, "Cập nhật vị trí thành công !");
+                id: Number(id)
+            }
+        })
+        if (!checkViTri) {
+            failCode(res, "", "Cập nhật vị trí thất bại! Vị trí không tồn tại!");
         }
+        else {
+            const data = await prisma.viTri.update({
+                data: {
+                    ten_vi_tri, tinh_thanh, quoc_gia, hinh_anh
+                },
+                where: {
+                    id: Number(id),
+                },
+            });
+            if (data == "") {
+                failCode(res, "", "Cập nhật vị trí thất bại !");
+            } else {
+                sucessCode(res, data, "Cập nhật vị trí thành công !");
+            }
+        }
+
     } catch (error) {
         errorCode(res, "Lỗi Backend");
     }

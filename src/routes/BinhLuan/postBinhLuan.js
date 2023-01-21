@@ -4,7 +4,7 @@ const { postBinhLuan } = require('../../controllers/BinhLuan/postBinhLuan');
 const { verifyToken } = require('../../middlewares/baseToken');
 const userRoute = express.Router();
 
-//http://localhost:8080/api/binh-luan
+//http://localhost:8080/api/post-binh-luan
 //post
-userRoute.post("/binh-luan", verifyToken, postBinhLuan)
+userRoute.post("/post-binh-luan", verifyToken, postBinhLuan)
 module.exports = userRoute;

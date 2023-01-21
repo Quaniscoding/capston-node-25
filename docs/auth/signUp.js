@@ -11,16 +11,18 @@ module.exports = {
                 "text/json",
                 "application/*+json"
             ],
-            "parameters": [
-                {
-                    "name": "model",
-                    "in": "body",
-                    "required": false,
-                    "schema": {
-                        "$ref": "#/components/schemas/ThongTinNguoiDung"
+            "requestBody": {
+                "description": "Sign up",
+                "require": "true",
+                "content": {
+                    " application/json": {
+                        schema: {
+                            $ref: "#/components/schemas/ThongTinNguoiDung",
+                        },
+
                     }
                 },
-            ],
+            },
             "responses": {
                 "200": {
                     "description": "Success"
