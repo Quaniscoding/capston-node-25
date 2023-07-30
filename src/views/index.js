@@ -7,7 +7,7 @@ const cors = require('cors');
 app.use(express.json());
 app.use(express.static("."));
 app.use(cors());
-app.listen(8080);
+app.listen(8080, () => console.log(`listen`));
 const rootRoute = require('../routes');
 const { tags } = require("../../docs/tags");
 const { components } = require("../../docs/components/components");
