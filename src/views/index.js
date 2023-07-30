@@ -51,7 +51,7 @@ const options = {
         openapi: "3.0.0",
         info: {
             "version": "v1",
-            "title": "Airbnb"
+            "title": "Airbnb",
         },
         tags,
         components,
@@ -103,10 +103,10 @@ const options = {
     apis: ["../routes/index.js", "../controllers/Auth/*.js"],
 };
 
-// const specs = swaggerJsdoc(options);
-// app.use(
-//     "/api-docs",
-//     swaggerUi.serve,
-//     swaggerUi.setup(specs, { explorer: true }),
-// );
+const specs = swaggerJsdoc(options);
+app.use(
+    "/swagger",
+    swaggerUi.serve,
+    swaggerUi.setup(specs, { explorer: true }),
+);
 app.use("/api", rootRoute)
