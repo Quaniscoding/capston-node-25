@@ -38,7 +38,7 @@ const { "/api/get-phong-thue/lay-phong-theo-vi-tri/{IdViTri}": getPhongThueViTri
 const { "/api/get-phong-thue/phan-trang/{pageIndex}/{pageSize}": getPhongThuePhanTrang } = require("../../docs/Phong/getPhongThuePhanTrang");
 const { "/api/post-phong-thue": postPhongThue } = require("../../docs/Phong/postPhongThue");
 const { "/api/update-phong-thue/{id}": updatePhongThue } = require("../../docs/Phong/updatePhongThue");
-const { "/api/delete-phong-thue/{id}": deletePhongThue } = require("../../docs/Phong/deletePhongThue");
+// const { "/api/delete-phong-thue/{id}": deletePhongThue } = require("../../docs/Phong/deletePhongThue");
 const { "/api/get-vi-tri": getViTri } = require("../../docs/ViTri/getViTri");
 const { "/api/post-vi-tri": postViTri } = require("../../docs/ViTri/postViTri");
 const { "/post-hinh-vi-tri/{id}": postHinhViTri } = require("../../docs/ViTri/postHinhViTri");
@@ -87,7 +87,7 @@ const options = {
             "/api/get-phong-thue/lay-phong-theo-vi-tri/{IdViTri}": getPhongThueViTri,
             "/api/get-phong-thue/phan-trang/{pageIndex}/{pageSize}": getPhongThuePhanTrang,
             "/api/post-phong-thue": postPhongThue,
-            "/api/delete-phong-thue/{id}": deletePhongThue,
+            // "/api/delete-phong-thue/{id}": deletePhongThue,
             "/api/update-phong-thue/{id}": updatePhongThue,
             //vị trí
             "/api/get-vi-tri": getViTri,

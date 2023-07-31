@@ -11,7 +11,6 @@ const deletePhongThue = async (req, res) => {
         })
         if (!checkPhongThue) {
             failCode(res, "", "Xóa phòng thuê thất bại !");
-
         }
         else {
             const data = await prisma.phong.delete({
