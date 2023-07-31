@@ -2,14 +2,12 @@
   "name": "capstone-node25",
   "version": "1.0.0",
   "main": "index.js",
-  "type": "module",
   "license": "MIT",
   "engines": {
     "node": "18.x"
   },
   "scripts": {
-    "start": "node src/views/index.js",
-    "dev": "nodemon src/views/index.js"
+    "start": "nodemon src/views/index.js"
   },
   "dependencies": {
     "@prisma/client": "^4.8.0",
